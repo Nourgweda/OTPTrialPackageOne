@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct OTPView<Style: TextFieldStyle>: View {
+public struct OTPView<Style: TextFieldStyle>: View {
     // MARK: - Data
     @Binding var textFieldCount: Int
     @State internal var data: [String] = []
@@ -10,7 +10,7 @@ struct OTPView<Style: TextFieldStyle>: View {
     var alignment: VerticalAlignment
     var textFieldCustomStyle: Style
 
-    var body: some View {
+    public var body: some View {
         HStack(alignment: alignment, spacing: spacing) {
             ForEach(data.indices, id: \.self) { item in
                 TextField("", text: $data[item])
